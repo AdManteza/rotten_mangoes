@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # File uploader gem
-gem "carrierwave", "~> 0.10.0"
+gem "carrierwave", "~> 0.11.2"
 gem 'mini_magick', '~> 4.3'
 
 # Use Capistrano for deployment

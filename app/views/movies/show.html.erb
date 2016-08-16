@@ -1,11 +1,11 @@
 <%= link_to "Back to all movies", movies_path %><br/>
-
-<%= link_to image_tag(@movie.poster_image_url), movie_path(@movie) %>
-
-<p>
-  <strong>Image:</strong>
+<hr>
+  
+<% if @movie.poster.thumb.url %>
   <%= image_tag @movie.poster.thumb.url %>
-</p>
+<% else %>
+  <%= link_to image_tag(@movie.poster_image_url), movie_path(@movie) %>
+<% end %>
 
 <h2>
   <%= @movie.title %> (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: {confirm: "You sure?"} %>)
