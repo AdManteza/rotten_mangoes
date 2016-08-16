@@ -7,3 +7,5 @@ class User < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 end
+
+
