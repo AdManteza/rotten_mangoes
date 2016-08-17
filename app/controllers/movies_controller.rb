@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
+
   def index
-    @movies = Movie.all
+    # @movies = Movie.all
+    @movies = Movie.has_url
   end
 
   def show
