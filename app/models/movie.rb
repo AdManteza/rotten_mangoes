@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  scope :has_url, -> { where.not(poster_image_url: nil) }
+
   has_many :reviews
 
   validates :title, :director, :description, :poster_image_url, :release_date, presence: true
