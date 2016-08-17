@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'users/index'
+  end
+
   # get 'reviews/new'
 
   # get 'reviews/create'
@@ -28,4 +32,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  namespace :admin do
+    resources :users
+  end
 end

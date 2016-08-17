@@ -14,6 +14,20 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def check_login
+    unless @user = User.find_by(id: session[:user_id])
+      flash[:notice] = "You must be logged in"
+      redirect_to new_session_path
+    end
+  end
+
+  def check_admin
+    unless @user && @user.admin?
+      flash[:notice] = "You must be an admin, sneaky bastard!"
+      redirect_to new_session_path
+    end
+  end
+
   helper_method :current_user
 end
 
