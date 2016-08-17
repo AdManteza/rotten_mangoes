@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_admin
-    unless @user && @user.admin?
+    unless @user && @user.admin
       flash[:notice] = "You must be an admin, sneaky bastard!"
       redirect_to new_session_path
     end
