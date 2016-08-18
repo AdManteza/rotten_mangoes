@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     get 'users/index'
   end
 
+  root to: 'movies#index'
+
   # get 'reviews/new'
 
   # get 'reviews/create'

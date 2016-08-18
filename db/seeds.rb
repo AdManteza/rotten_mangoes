@@ -16,12 +16,87 @@ User.create!(
 )
 
 # Normal user
-20.times do 
   User.create!(
-  firstname: 'Random',
+  firstname: 'User1',
   lastname: 'Person',
-  email: 'rando@example.com',
+  email: 'user1@example.com',
   password: '123',
   admin: false
 )
-end
+
+  User.create!(
+  firstname: 'User2',
+  lastname: 'Person',
+  email: 'user2@example.com',
+  password: '123',
+  admin: false
+)
+
+    User.create!(
+  firstname: 'User3',
+  lastname: 'Person',
+  email: 'user3@example.com',
+  password: '123',
+  admin: false
+)
+
+  User.create!(
+  firstname: 'User4',
+  lastname: 'Person',
+  email: 'user4@example.com',
+  password: '123',
+  admin: false
+)
+
+    User.create!(
+  firstname: 'User5',
+  lastname: 'Person',
+  email: 'user5@example.com',
+  password: '123',
+  admin: false
+)
+
+    User.create!(
+  firstname: 'User6',
+  lastname: 'Person',
+  email: 'user6@example.com',
+  password: '123',
+  admin: false
+)
+
+    User.create!(
+  firstname: 'User7',
+  lastname: 'Person',
+  email: 'user7@example.com',
+  password: '123',
+  admin: false
+)
+
+        User.create!(
+  firstname: 'User8',
+  lastname: 'Person',
+  email: 'user8@example.com',
+  password: '123',
+  admin: false
+)
+
+    User.create!(
+  firstname: 'User9',
+  lastname: 'Person',
+  email: 'user9@example.com',
+  password: '123',
+  admin: false
+)
+
+        User.create!(
+  firstname: 'User10',
+  lastname: 'Person',
+  email: 'user10@example.com',
+  password: '123',
+  admin: false
+)
+
+
+
+
+
