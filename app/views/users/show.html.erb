@@ -4,6 +4,17 @@
   <h4>FullName:</h4><td><%= @user.firstname%></td>
   <td><%= @user.lastname%></td>
   <h4>Email:</h4><p><%= @user.email%></p>
-  <p><%=@review.text%></p>
+<hr>
+  <h3>Movies Reviewed:</h3>
+  <% @reviews.each do |review|%>
+    <table>
+      <tr>
+        <td><h4><p><%= link_to review.movie.title, movie_path %>:</p></h4></td>
+        <td><p><%=review.text%></p></td>
+      </tr>  
+    </table>
+  <%end%>
 </tr>
 <hr>
+
+<%= link_to "Back to all movies", movies_path %><br/>
