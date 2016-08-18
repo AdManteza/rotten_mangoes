@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  mount_uploader :image, ImageUploader
+  
   scope :has_url, -> { where.not(poster_image_url: nil) }
 
   has_many :reviews
