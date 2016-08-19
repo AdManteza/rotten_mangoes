@@ -14,6 +14,26 @@ class Movie < ApplicationRecord
     reviews.sum(:rating_out_of_ten)/reviews.size unless reviews.size == 0
   end
 
+  def self.search(query1, query2, query3)
+    # binding.pry
+    if query3 == "1"
+      range = (0..89)
+    elsif query3 == "2"
+      range = (90..120)
+    end
+
+    if query3 != ""
+      if query3 == "3"
+        where("title LIKE ?", "%#{query1}%").where("director LIKE ?", "%#{query2}%").where("runtime_in_minutes > ?", 120)
+      else
+        where("title LIKE ?", "%#{query1}%").where("director LIKE ?", "%#{query2}%").where(runtime_in_minutes: range)
+      end 
+    elsif query3 == ""
+      where("title LIKE ?", "%#{query1}%").where("director LIKE ?", "%#{query2}%") 
+    end
+
+  end
+
   protected
 
   def release_date_is_in_the_past
@@ -22,7 +42,3 @@ class Movie < ApplicationRecord
     end
   end
 end
-
-
-
-
