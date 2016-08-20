@@ -27,7 +27,7 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <% if current_user.admin %>
+  <% if @user.admin %>
     <p>This User is an Admin</p>
   <% else %>
     <div>
