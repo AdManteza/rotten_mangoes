@@ -46,7 +46,8 @@ class Admin::UsersController < ApplicationController
       flash[:notice] = "You cannot delete yourself"
       redirect_to admin_users_index_path
     else
-      @user.destroy 
+      UserMailer.delete_email(@user).deliver_later
+      @user.destroy
       redirect_to admin_users_index_path
     end
   end
