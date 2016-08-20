@@ -14,24 +14,23 @@ class Movie < ApplicationRecord
     reviews.sum(:rating_out_of_ten)/reviews.size unless reviews.size == 0
   end
 
-  def self.search(query1, query2, query3)
+  def self.search(query1, query2)
     # binding.pry
-    if query3 == "1"
+    if query2 == "1"
       range = (0..89)
-    elsif query3 == "2"
+    elsif query2 == "2"
       range = (90..120)
     end
 
-    if query3 != ""
-      if query3 == "3"
-        where("title LIKE ?", "%#{query1}%").where("director LIKE ?", "%#{query2}%").where("runtime_in_minutes > ?", 120)
+    if query2 != ""
+      if query2 == "3"
+        where('title LIKE :query1 OR director LIKE :query1', query1: "%#{query1}%").where("runtime_in_minutes > ?", 120)
       else
-        where("title LIKE ?", "%#{query1}%").where("director LIKE ?", "%#{query2}%").where(runtime_in_minutes: range)
+        where('title LIKE :query1 OR director LIKE :query1', query1: "%#{query1}%").where(runtime_in_minutes: range)
       end 
-    elsif query3 == ""
-      where("title LIKE ?", "%#{query1}%").where("director LIKE ?", "%#{query2}%") 
-    end
-
+    elsif query2 == ""
+      where('title LIKE :query1 OR director LIKE :query1', query1: "%#{query1}%")
+    ends
   end
 
   protected

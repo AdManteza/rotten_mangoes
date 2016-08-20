@@ -2,8 +2,7 @@
 
 <div>
   <%= form_tag movies_path, :method => 'get' do %>
-  <%= text_field_tag :title, params[:title], placeholder: "Movie Title" %>
-  <%= text_field_tag :director, params[:director], placeholder: "Director" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Movie Title or Director" %>
   <%= select_tag "runtime_in_minutes", options_for_select([[""], ["Under 90 minutes",1], ["Between 90 and 120 minutes",2], ["Over 120 minutes",3]]) %>
 
   <%= submit_tag "Search" %>
