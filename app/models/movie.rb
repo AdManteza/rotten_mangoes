@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
+
   mount_uploader :image, ImageUploader
   
   scope :has_url, -> { where.not(poster_image_url: nil) }
@@ -30,7 +31,7 @@ class Movie < ApplicationRecord
       end 
     elsif query2 == ""
       where('title LIKE :query1 OR director LIKE :query1', query1: "%#{query1}%")
-    ends
+    end
   end
 
   protected
@@ -40,4 +41,5 @@ class Movie < ApplicationRecord
       errors.add(:release_date, "should be in the past") if release_date > Date.today
     end
   end
+
 end
