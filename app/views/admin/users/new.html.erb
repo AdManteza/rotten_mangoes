@@ -1,0 +1,39 @@
+<h1>Create a New User</h1>
+
+<%= form_for [:admin, @user] do |f| %>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :firstname, "First Name" %>
+    <%= f.text_field :firstname %>
+  </div>
+
+  <div>
+    <%= f.label :lastname, "Last Name" %>
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= check_box_tag(:make_admin) %>
+    <%= label_tag(:make_admin, "Make This user an admin") %>
+  </div>
+
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>
