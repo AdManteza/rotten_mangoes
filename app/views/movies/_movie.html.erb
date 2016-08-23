@@ -1,5 +1,32 @@
-<%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
+<!-- Project One -->
 
+  
+  <div class="col-md-6 col-md-offset-2">
+    <%= image_tag movie.poster_image_url, class: "center-block img_size img-responsive" %>
+  </div>
+  <div class="col-md-4">
+    <span class="movie_title"><strong><%= movie.title %></strong></span>
+    <p><h5><%= formatted_date(movie.release_date) %></h5></p>
+    <p><h5>Directed by: <%= movie.director %> </h5></p>
+    <p><h6>Runtime: <%= movie.runtime_in_minutes %> minutes</h6></p>
+    <%= render partial: 'reviews', locals: { movie: movie }%>
+    <div><%= link_to "Details", movie_path(movie), class:"btn btn-primary"%></div>
+
+  </div>
+  
+
+
+
+
+<!-- /.row -->
+
+
+
+
+
+
+
+<!-- 
 <% if movie.image.thumb.url %>
   <%= image_tag movie.image.thumb.url %>
 <% else %>
@@ -9,4 +36,4 @@
 <h2><%= link_to movie.title, movie_path(movie) %></h2>
 <h3><%= formatted_date(movie.release_date) %></h3>
 <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-<p><%= movie.description %></p>
+<p><%= movie.description %></p> -->

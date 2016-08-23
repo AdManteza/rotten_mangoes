@@ -32,6 +32,8 @@ gem 'mini_magick', '~> 4.3'
 
 gem 'kaminari'
 
+gem 'bootstrap-sass'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

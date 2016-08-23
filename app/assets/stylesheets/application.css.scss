@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+
+.brand_heading { color: #fed136; font-size:35px; font-style: italic; font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive; }
+
+body { padding-top: 70px; padding-bottom: 50px; }
+
+.img_size { height: 300px; width: 240px;}
+
+.padding_bottom { padding-bottom: 30px; }
+
+.movie_title { color: #fed136; font-size:20px; font-style: bold; font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive; }

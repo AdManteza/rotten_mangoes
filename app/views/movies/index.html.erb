@@ -1,24 +1,34 @@
-<h1>Rotten Mangoes</h1>
 
-<div>
-  <%= form_tag movies_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Movie Title or Director" %>
-  <%= select_tag "runtime_in_minutes", options_for_select([[""], ["Under 90 minutes",1], ["Between 90 and 120 minutes",2], ["Over 120 minutes",3]]) %>
+<%= form_tag movies_path, :method => 'get' do %>
+<form class="form-inline">
+  <div class="form-group col-md-2">
+    <h4>Search for Movies</h4>
+  </div>
+  <div class="form-group col-md-3">
+    <%= text_field_tag :search, params[:search],  class: "form-control", placeholder: "Movie Title or Director" %>
+  </div>
+  <div class="form-group col-md-3"">
+    <%= select_tag "runtime_in_minutes", options_for_select([[""], ["Under 90 minutes",1], ["Between 90 and 120 minutes",2], ["Over 120 minutes",3]], 1), class: "form-control" %>
+  </div>
+    <%= submit_tag "Search", class: "btn btn-default" %>   
+</form>
+<% end %>
 
-  <%= submit_tag "Search" %>
-  <% end %>
-</div>
-<%= link_to "Submit a Movie!", new_movie_path %>
 <hr>
+
 <% if @movies.size > 0 %>
   <% @movies.each do |movie| %>
-    <%= render partial: 'movie', locals: { movie: movie } %>
-    <%= render partial: 'reviews', locals: { movie: movie } %>
-  <hr>
+    <div class="row col-md-6 padding_bottom">
+      <%= render partial: 'movie', locals: { movie: movie } %> 
+    </div>
   <%end%>
 <% elsif @movies.size == 0 %>
   <p>Your search did not return any results</p>
-  <%= link_to "Back to all movies", movies_path %><br/>
 <% end %>
+
+
+
+
+
 
 
