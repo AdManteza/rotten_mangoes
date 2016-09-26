@@ -1,24 +1,8 @@
-# README
+# Rotten Mangoes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My first Rails app that is a clone of the Rotten Tomatoes movie review site.
 
-Things you may want to cover:
+Tech Stack used: 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. HTML/CSS/Bootstrap
+2. Ruby on Rails
